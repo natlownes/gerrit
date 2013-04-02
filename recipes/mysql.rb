@@ -23,6 +23,10 @@ require_recipe "mysql"
 require_recipe "mysql::server"
 require_recipe "database"
 
+chef_gem 'mysql' do
+  action :install
+end
+
 # package "libmysql-java"
 
 remote_file "#{node['gerrit']['install_dir']}/lib/mysql-connector-java-5.1.10.jar" do
